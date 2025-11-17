@@ -1,0 +1,81 @@
+{
+  "plan_description": "Analiza detaliată a unui plan de etaj rezidențial, conceput potențial pentru două unități de locuit separate sau pentru o familie multi-generațională, având două bucătării, două băi și zone de living distincte. Planul indică o compartimentare eficientă și o bună utilizare a spațiului, cu zone tehnice dedicate.",
+  "overall_dimensions": {
+    "width_mm": 15000,
+    "depth_mm": 13920,
+    "width_m": 15.0,
+    "depth_m": 13.92
+  },
+  "rooms": [
+    {
+      "name": "Living/Dining Room",
+      "original_name": "Wohnen/Essen",
+      "area_sqm": 34.78
+    },
+    {
+      "name": "Kitchen 1",
+      "original_name": "Küche 1",
+      "area_sqm": 10.02
+    },
+    {
+      "name": "Bathroom 1",
+      "original_name": "Bad 1",
+      "area_sqm": 7.15
+    },
+    {
+      "name": "Bedroom 1",
+      "original_name": "Zimmer 1",
+      "area_sqm": 13.05
+    },
+    {
+      "name": "Bedroom 2",
+      "original_name": "Zimmer 2",
+      "area_sqm": 13.42
+    },
+    {
+      "name": "Hallway",
+      "original_name": "Flur",
+      "area_sqm": 7.5
+    },
+    {
+      "name": "Technical Room 1",
+      "original_name": "Technikraum 1",
+      "area_sqm": 7.32
+    },
+    {
+      "name": "Entrance Hall 1",
+      "original_name": "Diele 1",
+      "area_sqm": 5.88
+    },
+    {
+      "name": "Bedroom 3",
+      "original_name": "Zimmer 3",
+      "area_sqm": 8.08
+    },
+    {
+      "name": "Living Room 2",
+      "original_name": "Wohnen",
+      "area_sqm": 13.59
+    },
+    {
+      "name": "Entrance Hall 2",
+      "original_name": "Diele 2",
+      "area_sqm": 7.53
+    },
+    {
+      "name": "Kitchen 2",
+      "original_name": "Küche 2",
+      "area_sqm": 5.47
+    },
+    {
+      "name": "Bathroom 2",
+      "original_name": "Bad 2",
+      "area_sqm": 5.92
+    },
+    {
+      "name": "Technical Room 2",
+      "original_name": "Technikraum 2",
+      "area_sqm": 8.05
+    }
+  ]
+}

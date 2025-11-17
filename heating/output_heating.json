@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "component": "heating",
+    "generated_at": "2025-11-07T11:07:40.841448Z",
+    "currency": "EUR"
+  },
+  "inputs": {
+    "area_m2": 67.22,
+    "coefficient_heating_per_m2": 20.0,
+    "type": "gaz",
+    "type_coefficient": 1.0
+  },
+  "calculation": {
+    "formula": "area_m2 * coefficient_heating_per_m2 * type_coefficient",
+    "result": 1344.4
+  }
+}

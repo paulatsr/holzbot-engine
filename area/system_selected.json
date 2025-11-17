@@ -1,0 +1,18 @@
+{
+  "tipSistem": "MASSIVHOLZ",
+  "gradPrefabricare": "SANTIER",
+  "tipFundatie": "SOCLU",
+  "tipAcoperis": "Mansardendach mit Fußwalm",
+  "tamplarie_tip": "Aluminiu",
+  "nivelOferta": "CASA_COMPLETA",
+  "nivelEnergetic": "KfW 40",
+  "incalzire": "Electric",
+  "ventilatie_recuperare": true,
+  "accesSantier": "DIFICIL",
+  "teren": "PANTA_MARE",
+  "utilitati_site": {
+    "curent": true,
+    "apa": true
+  },
+  "saved_at": "2025-11-13T13:20:12.028952Z"
+}

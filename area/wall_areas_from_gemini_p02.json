@@ -1,0 +1,19 @@
+{
+  "source_file": "perimeter/walls_measurements_gemini.json",
+  "standards": {
+    "country": "Germany",
+    "wall_height_m": 2.5,
+    "standard": "DIN 277",
+    "description": "Standard German de dimensionare spațială — înălțimea tipică a pereților în locuințe rezidențiale."
+  },
+  "inputs": {
+    "interior_length_m": 50.05,
+    "exterior_length_m": 42.9
+  },
+  "computed_areas": {
+    "interior_walls_area_m2": 125.12,
+    "exterior_walls_area_m2": 107.25,
+    "total_walls_area_m2": 232.37
+  },
+  "notes": "Ariile au fost calculate automat pe baza valorilor medii din walls_measurements_gemini.json. Rezultatele sunt în conformitate cu standardul german DIN 277, folosind o înălțime de 2.5m."
+}

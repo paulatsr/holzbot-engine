@@ -1,0 +1,11 @@
+{
+  "scale_meters_per_pixel": 0.0305,
+  "surface_estimation": {
+    "by_scale_m2": 145.08,
+    "by_labels_m2": 140.14,
+    "final_area_m2": 142.61,
+    "method_used": "average"
+  },
+  "confidence": "high",
+  "verification_notes": "Cele două metode au produs rezultate foarte apropiate (diferență de ~3.5%), indicând o coerență ridicată. Metoda geometrică a calculat aria brută a etajului (145.08 m²) pe baza dimensiunilor exterioare, în timp ce metoda semantică a însumat suprafețele utile specificate (inclusiv balcoane), totalizând 140.14 m². Diferența de ~5 m² este o estimare plauzibilă pentru suprafața ocupată de pereții structurali și interiori. Deoarece diferența este sub 25%, s-a calculat media aritmetică pentru estimarea finală."
+}

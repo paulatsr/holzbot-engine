@@ -1,0 +1,10 @@
+{
+  "plan_quality": "BUN",
+  "detected_elements": [
+    "valori de suprafață",
+    "dimensiuni liniare",
+    "etichete de camere cu valori numerice"
+  ],
+  "confidence": "high",
+  "explanation": "Planul conține numeroase dimensiuni liniare (ex: '4,86 m', '6,48 m', '7,10 m') și valori de suprafață pentru fiecare cameră (ex: 'Hauswirtschaft 7,64 m²', 'Wohnen/Essen 44,58 m²'), ceea ce îl face pe deplin utilizabil pentru calcule automatizate."
+}

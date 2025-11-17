@@ -1,0 +1,29 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+
+  "energy_level_multipliers": {
+    "Standard": 1.00,
+    "KfW 55": 1.07,
+    "KfW 40": 1.12,
+    "KfW 40+": 1.18
+  },
+
+  "site_access_multipliers_for_org": {
+    "Ușor": 1.00,
+    "Mediu": 1.25,
+    "Dificil": 1.55
+  },
+
+  "terrain_multipliers_for_org": {
+    "Plan": 1.00,
+    "Pantă ușoară": 1.15,
+    "Pantă mare": 1.30
+  },
+
+  "heating_fixed_costs": {
+    "Gaz": 3500.0,
+    "Electric": 2500.0,
+    "Pompa de căldură": 10000.0
+  }
+}

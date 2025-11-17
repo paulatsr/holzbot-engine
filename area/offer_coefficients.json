@@ -1,0 +1,8 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+  "organization_markup": 0.05,
+  "supervising_markup": 0.03,
+  "profit_margin": 0.10,
+  "vat": 0.19
+}

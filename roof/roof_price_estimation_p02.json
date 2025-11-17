@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "generated_at": "2025-11-13T13:33:09.939026Z",
+    "currency": "EUR",
+    "perimeter_source": "estimated as 4*sqrt(area)"
+  },
+  "inputs": {
+    "house_area_m2": 142.61,
+    "perimeter_m": 47.77,
+    "roof_type": {
+      "name_de": "Mansardendach mit Fußwalm",
+      "name_en": "Mansard roof with foot hip",
+      "description": "Variante de mansard cu zone hip inferioare, design elegant dar complex.",
+      "cost_range_eur_per_m2": [
+        115.0,
+        165.0
+      ],
+      "extra_walls_price_eur_per_m": 120.0
+    },
+    "coefficients": {
+      "roof_overhang_m": 0.4,
+      "sheet_metal_price_per_m": 28.0,
+      "insulation_price_per_m2": 22.0,
+      "tile_price_per_m2": 35.0,
+      "metal_price_per_m2": 22.0,
+      "membrane_price_per_m2": 12.0
+    },
+    "material": {
+      "selected": null,
+      "unit_price_eur_per_m2": 0.0
+    }
+  },
+  "components": {
+    "roof_base": {
+      "min_total_eur": 16400.15,
+      "max_total_eur": 23530.65,
+      "average_total_eur": 19965.4
+    },
+    "sheet_metal": {
+      "formula": "perimeter_m * roof_overhang_m * sheet_metal_price_per_m",
+      "total_eur": 535.0
+    },
+    "extra_walls": {
+      "formula": "perimeter_m * extra_walls_price_eur_per_m",
+      "total_eur": 5732.13
+    },
+    "insulation": {
+      "formula": "house_area_m2 * insulation_price_per_m2",
+      "total_eur": 3137.42
+    },
+    "material": {
+      "formula": "house_area_m2 * material_unit_price_eur_per_m2",
+      "total_eur": 0.0
+    }
+  },
+  "roof_final_total_eur": 29369.95
+}

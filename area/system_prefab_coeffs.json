@@ -1,0 +1,16 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+
+  "base_unit_prices_per_m2": {
+    "CLT":        { "interior": 160.0, "exterior": 275.0 },
+    "Holzrahmen": { "interior": 140.0, "exterior": 230.0 },
+    "Massivholz": { "interior": 200.0, "exterior": 320.0 }
+  },
+
+  "prefabrication_multipliers": {
+    "Module": 1.1,
+    "Panouri": 1,
+    "Montaj pe șantier": 1.25
+  }
+}

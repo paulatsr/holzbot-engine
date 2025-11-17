@@ -1,0 +1,35 @@
+{
+  "scale_meters_per_pixel": 0.0305,
+  "door": {
+    "file": "export_objects/exports/door/door_6_270_none.png",
+    "pixel_width_estimated": 32.8,
+    "real_width_meters": 1.0004,
+    "validated_width_meters": 1.0,
+    "validation_method": "explicit_dimension_on_plan",
+    "confidence": "High"
+  },
+  "window": {
+    "file": "export_objects/exports/window/window_12_270_flipH.png",
+    "pixel_width_estimated": 32.8,
+    "real_width_meters": 1.0004,
+    "validated_width_meters": 1.0,
+    "validation_method": "explicit_dimension_on_plan",
+    "confidence": "High"
+  },
+  "double_door": {
+    "file": "export_objects/exports/double_door/double_door_4_270_flipHV.png",
+    "pixel_width_estimated": 65.6,
+    "real_width_meters": 2.0008,
+    "validated_width_meters": 2.0,
+    "validation_method": "explicit_dimension_on_plan",
+    "confidence": "High"
+  },
+  "double_window": {
+    "file": "export_objects/exports/double_window/double_window_4_0_none.png",
+    "pixel_width_estimated": 97.2,
+    "real_width_meters": 2.9646,
+    "validated_width_meters": 2.965,
+    "validation_method": "explicit_dimension_on_plan",
+    "confidence": "High"
+  }
+}

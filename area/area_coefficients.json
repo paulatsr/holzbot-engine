@@ -1,0 +1,9 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+  "foundation_price_per_m2": 200.0,
+  "floors_count": 1,
+  "floor_coefficient_per_m2": 110.0,
+
+  "ceiling_coefficient_per_m2": 40.0
+}

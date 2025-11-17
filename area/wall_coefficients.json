@@ -1,0 +1,12 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+
+  "interior": {
+    "finish_price_per_m2": 45.0
+  },
+
+  "exterior": {
+    "finish_price_per_m2": 70.0
+  }
+}

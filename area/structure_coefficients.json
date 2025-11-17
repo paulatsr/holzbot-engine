@@ -1,0 +1,18 @@
+{
+  "schema": "v2",
+  "currency": "EUR",
+
+  "base_unit_prices": {
+    "CLT":        { "interior": 160.0, "exterior": 275.0 },
+    "HOLZRAHMEN": { "interior": 140.0, "exterior": 230.0 },
+    "MASSIVHOLZ": { "interior": 200.0, "exterior": 320.0 }
+  },
+
+  "prefabrication_modifiers": {
+    "MODULE": 1.1,
+    "PANOURI": 1,
+    "SANTIER": 1.25
+  },
+
+  "notes": "unit prices are €/m² for wall structure; prefabrication modifiers multiply both interior & exterior"
+}

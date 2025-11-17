@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      799,
+      918,
+      917,
+      1046
+    ],
+    "diag": 174.09,
+    "min_dist_to_exterior": 371.0,
+    "proximity_ratio": 4.262,
+    "reason": "371.0px > 0.5×diag (87.0px)"
+  },
+  {
+    "id": 2,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      574,
+      939,
+      694,
+      1051
+    ],
+    "diag": 164.15,
+    "min_dist_to_exterior": 146.0,
+    "proximity_ratio": 1.779,
+    "reason": "146.0px > 0.5×diag (82.1px)"
+  },
+  {
+    "id": 3,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      934,
+      805,
+      1054,
+      909
+    ],
+    "diag": 158.8,
+    "min_dist_to_exterior": 506.0,
+    "proximity_ratio": 6.373,
+    "reason": "506.0px > 0.5×diag (79.4px)"
+  },
+  {
+    "id": 4,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      1352,
+      1057,
+      1474,
+      1165
+    ],
+    "diag": 162.94,
+    "min_dist_to_exterior": 502.0,
+    "proximity_ratio": 6.162,
+    "reason": "502.0px > 0.5×diag (81.5px)"
+  },
+  {
+    "id": 5,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      1735,
+      699,
+      1851,
+      807
+    ],
+    "diag": 158.49,
+    "min_dist_to_exterior": 286.0,
+    "proximity_ratio": 3.609,
+    "reason": "286.0px > 0.5×diag (79.2px)"
+  },
+  {
+    "id": 6,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      1733,
+      986,
+      1847,
+      1086
+    ],
+    "diag": 151.64,
+    "min_dist_to_exterior": 426.0,
+    "proximity_ratio": 5.618,
+    "reason": "426.0px > 0.5×diag (75.8px)"
+  },
+  {
+    "id": 7,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      2012,
+      686,
+      2126,
+      796
+    ],
+    "diag": 158.42,
+    "min_dist_to_exterior": 148.0,
+    "proximity_ratio": 1.868,
+    "reason": "148.0px > 0.5×diag (79.2px)"
+  },
+  {
+    "id": 8,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      977,
+      1045,
+      1089,
+      1167
+    ],
+    "diag": 165.61,
+    "min_dist_to_exterior": 499.0,
+    "proximity_ratio": 6.026,
+    "reason": "499.0px > 0.5×diag (82.8px)"
+  },
+  {
+    "id": 9,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      946,
+      1396,
+      1068,
+      1512
+    ],
+    "diag": 168.34,
+    "min_dist_to_exterior": 154.0,
+    "proximity_ratio": 1.83,
+    "reason": "154.0px > 0.5×diag (84.2px)"
+  },
+  {
+    "id": 10,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      1362,
+      1397,
+      1488,
+      1521
+    ],
+    "diag": 176.78,
+    "min_dist_to_exterior": 146.0,
+    "proximity_ratio": 1.652,
+    "reason": "146.0px > 0.5×diag (88.4px)"
+  },
+  {
+    "id": 11,
+    "type": "door",
+    "status": "interior",
+    "bbox": [
+      574,
+      1236,
+      696,
+      1358
+    ],
+    "diag": 172.53,
+    "min_dist_to_exterior": 224.0,
+    "proximity_ratio": 2.597,
+    "reason": "224.0px > 0.5×diag (86.3px)"
+  },
+  {
+    "id": 12,
+    "type": "double-door",
+    "status": "interior",
+    "bbox": [
+      1830,
+      1402,
+      2034,
+      1524
+    ],
+    "diag": 237.7,
+    "min_dist_to_exterior": 198.0,
+    "proximity_ratio": 1.666,
+    "reason": "198.0px > 0.5×diag (118.8px)"
+  },
+  {
+    "id": 13,
+    "type": "double-door",
+    "status": "interior",
+    "bbox": [
+      1994,
+      1157,
+      2126,
+      1365
+    ],
+    "diag": 246.35,
+    "min_dist_to_exterior": 147.0,
+    "proximity_ratio": 1.193,
+    "reason": "147.0px > 0.5×diag (123.2px)"
+  }
+]

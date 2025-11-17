@@ -1,0 +1,51 @@
+{
+  "source_files": {
+    "walls": "perimeter/walls_measurements_gemini.json",
+    "openings": "measure_objects/openings_measurements_gemini.json",
+    "detections": "count_objects/detections_all.json",
+    "exterior_doors": "exterior_doors/exterior_doors.json"
+  },
+  "standards": {
+    "country": "Germany",
+    "standard": "DIN 277",
+    "wall_height_m": 2.5,
+    "door_height_m": 2.05,
+    "window_height_m": 1.25,
+    "notes": "Înălțimi tipice pentru construcții rezidențiale din lemn."
+  },
+  "counts": {
+    "doors_total": 12,
+    "doors_interior": 9,
+    "doors_exterior": 3,
+    "windows_simple": 6,
+    "windows_double": 4
+  },
+  "widths_m": {
+    "door": 0.85,
+    "double_door": 1.7,
+    "window": 1.14,
+    "double_window": 2.0
+  },
+  "areas_m2": {
+    "walls": {
+      "interior_total": 129.9,
+      "exterior_total": 129.82
+    },
+    "openings": {
+      "doors_interior": 15.68,
+      "doors_exterior": 5.23,
+      "windows_exterior": 18.55,
+      "openings_exterior_total": 23.78
+    },
+    "net_walls": {
+      "interior_net": 114.22,
+      "exterior_net": 106.05
+    },
+    "summary": {
+      "gross_total": 259.73,
+      "openings_total": 39.46,
+      "net_total": 220.26
+    }
+  },
+  "notes": "Scriptul a calculat automat ariile pereților și ale deschiderilor pe baza fișierelor de detecție și a dimensiunilor estimate de Gemini. Ferestrele duble și simple sunt tratate separat. Ușile exterioare contribuie la aria exterioară, iar cele interioare la aria internă."
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+  "unit_price_per_m2": {
+    "Lemn": 500.0,
+    "Lemn-Aluminiu": 650.0,
+    "PVC": 350.0,
+    "Aluminiu": 600.0
+  },
+  "interior_door_unit_price_per_m2": 450.0
+}

@@ -1,0 +1,18 @@
+{
+  "image_width_px": 983,
+  "image_height_px": 768,
+  "reference_measurement": {
+    "segment_label": "12.20m",
+    "pixel_length_estimated": 400.0,
+    "real_length_meters": 12.2
+  },
+  "meters_per_pixel": 0.0305,
+  "verification": {
+    "room_example": {
+      "label": "Fitness",
+      "approx_dimensions": "5.0m x 4.7m",
+      "expected_area": "23.33m²",
+      "validation": "Dimensions and area are consistent with the scale."
+    }
+  }
+}

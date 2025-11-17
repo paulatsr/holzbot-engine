@@ -1,0 +1,19 @@
+{
+  "scale_meters_per_pixel": 0.0305,
+  "estimations": {
+    "by_pixels": {
+      "interior_meters": 50.5,
+      "exterior_meters": 42.6
+    },
+    "by_proportion": {
+      "interior_meters": 49.6,
+      "exterior_meters": 43.2
+    },
+    "average_result": {
+      "interior_meters": 50.05,
+      "exterior_meters": 42.9
+    }
+  },
+  "confidence": "High",
+  "verification_notes": "The two independent estimation methods yielded highly consistent results for both interior and exterior walls, with a variance of less than 2% between methods for each category. The pixel-based method involved tracing approximately 1396 pixels for exterior walls and 1655 pixels for interior walls. The proportion-based method used the main external dimensions (approx. 12.20m x 9.38m) for the exterior perimeter and summed the lengths of internal walls derived from room dimensions and area calculations. The close correlation between the two results provides strong validation for the final averaged estimate."
+}

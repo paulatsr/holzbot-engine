@@ -1,0 +1,22 @@
+{
+  "surface_estimation": {
+    "final_area_m2": 309.21,
+    "method_used": "multi_plan_sum",
+    "by_scale_m2": 292.21,
+    "by_labels_m2": 306.74
+  },
+  "aggregated_from_plans": true,
+  "plans_count": 2,
+  "plans": [
+    {
+      "plan_file": "house_area_gemini_p01.json",
+      "final_area_m2": 166.6,
+      "method_used": "by_labels"
+    },
+    {
+      "plan_file": "house_area_gemini_p02.json",
+      "final_area_m2": 142.61,
+      "method_used": "average"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "generated_at": "2025-11-07T11:07:40.843043Z"
+  },
+  "inputs": {
+    "house_area_m2": 67.22,
+    "floors_count": 2,
+    "foundation_unit_selected": "FALLBACK",
+    "foundation_unit_price_eur_per_m2": 200.0,
+    "floor_coefficient_per_m2": 110.0,
+    "ceiling_coefficient_per_m2": 40.0,
+    "basement_exists": true
+  },
+  "results": {
+    "floor_total_eur": 28232.4,
+    "ceiling_total_eur": 5377.6,
+    "basement_total_eur": 42000.0
+  }
+}

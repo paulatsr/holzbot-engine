@@ -1,0 +1,8 @@
+{
+  "schema": "v1",
+  "currency": "EUR",
+
+  "exists": false,
+  "area_m2": 60.0,
+  "coefficient_per_m2": 700.0
+}

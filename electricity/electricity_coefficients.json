@@ -1,0 +1,6 @@
+{
+  "schema": "v1",
+  "description": "Coeficienți pentru calculul prețului final al electricității",
+  "currency": "EUR",
+  "coefficient_electricity_per_m2": 60
+}

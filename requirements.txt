@@ -1,0 +1,28 @@
+# --- Core CV / AI ---
+roboflow==1.2.11
+supervision==0.26.1
+ultralytics==8.3.23
+
+# OpenCV: GUI pe mac/Windows; headless pe Linux
+opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84 ; platform_system == "Linux"
+
+# Imaging / numerics (3.11)
+pillow==10.4.0
+numpy==1.26.4    ; python_version < "3.12"
+
+# LLM vendors
+google-generativeai==0.8.3
+openai>=1.52.0,<2
+httpx<0.28
+protobuf<5
+
+# Utilities
+requests>=2.31,<3
+python-dotenv==1.0.1
+tqdm==4.66.5
+rich==13.8.1
+
+# Web / PDF
+Flask>=3.0.0,<4
+reportlab==4.2.5

@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "component": "sewage",
+    "generated_at": "2025-11-07T11:07:40.840884Z",
+    "currency": "EUR"
+  },
+  "inputs": {
+    "area_m2": 67.22,
+    "coefficient_sewage_per_m2": 4.8
+  },
+  "calculation": {
+    "formula": "area_m2 * coefficient_sewage_per_m2",
+    "result": 322.66
+  }
+}

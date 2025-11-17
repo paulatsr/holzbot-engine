@@ -1,0 +1,1231 @@
+{
+  "meta": {
+    "generated_at": "2025-11-13T13:33:17.996198Z",
+    "currency": "EUR",
+    "plans_count": 2
+  },
+  "summary": {
+    "house_area_m2": 309.21,
+    "final_structure_eur": 293460.56,
+    "final_house_eur": 426584.36,
+    "offer": {
+      "value_semi_eur": 506910.19,
+      "final_offer_eur": 603223.13,
+      "coefficients": {
+        "organization_markup_base": 0.05,
+        "organization_markup_effective": 0.05,
+        "supervising_markup": 0.03,
+        "profit_margin": 0.1,
+        "vat": 0.19,
+        "acces_coef": 1.06,
+        "teren_coef": 1.1,
+        "energetic_coef": 1.08
+      }
+    }
+  },
+  "roof_breakdown": {
+    "roof_base_avg_eur": 43289.4,
+    "sheet_metal_eur": 1113.25,
+    "extra_walls_eur": 11927.66,
+    "insulation_eur": 6802.62,
+    "roof_final_total_eur": 63132.93
+  },
+  "system_and_prefab": {
+    "system": "MASSIVHOLZ",
+    "prefab": "SANTIER",
+    "unit_prices_applied": {
+      "interior_eur_per_m2": 250.0,
+      "exterior_eur_per_m2": 400.0
+    }
+  },
+  "foundation": {
+    "tipFundatie_key": "SOCLU",
+    "unit_price_eur_per_m2": 200.0,
+    "foundation_area_m2": 309.21,
+    "foundation_cost_eur": 61842.0
+  },
+  "components": {
+    "openings": {
+      "windows_total_eur": 9671.25,
+      "doors_total_eur": 27675.0,
+      "items": [
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0,
+          "height_m": 2.05,
+          "area_m2": 4.1,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 4.1,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 1845.0
+          }
+        },
+        {
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0,
+          "height_m": 2.05,
+          "area_m2": 4.1,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 4.1,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 1845.0
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "double_window",
+          "status": "exterior",
+          "width_m": 2.965,
+          "height_m": 1.25,
+          "area_m2": 3.706,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_WINDOW",
+            "values": {
+              "area_m2": 3.70625,
+              "PRICE_PER_WINDOW_eur_per_m2": 900.0
+            },
+            "result_eur": 3335.62,
+            "treated_as": "window"
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0,
+          "height_m": 2.05,
+          "area_m2": 2.05,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 2.05,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 922.5
+          }
+        },
+        {
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0,
+          "height_m": 2.05,
+          "area_m2": 4.1,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 4.1,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 1845.0
+          }
+        },
+        {
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0,
+          "height_m": 2.05,
+          "area_m2": 4.1,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_DOOR_INT",
+            "values": {
+              "area_m2": 4.1,
+              "PRICE_PER_DOOR_INT_eur_per_m2": 450.0
+            },
+            "result_eur": 1845.0
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0,
+          "height_m": 1.25,
+          "area_m2": 1.25,
+          "calculation": {
+            "formula": "area_m2 × unit_wall_price",
+            "values": {
+              "area_m2": 1.25,
+              "unit_wall_price_eur_per_m2": 240.0
+            },
+            "result_eur": 300.0,
+            "treated_as": "wall"
+          }
+        },
+        {
+          "type": "double_window",
+          "status": "exterior",
+          "width_m": 2.965,
+          "height_m": 1.25,
+          "area_m2": 3.706,
+          "calculation": {
+            "formula": "area_m2 × PRICE_PER_WINDOW",
+            "values": {
+              "area_m2": 3.70625,
+              "PRICE_PER_WINDOW_eur_per_m2": 900.0
+            },
+            "result_eur": 3335.62,
+            "treated_as": "window"
+          }
+        }
+      ]
+    },
+    "walls_structure": {
+      "calculations": {
+        "interior": {
+          "formula": "net_area_m2 × unit_int",
+          "values": {
+            "net_area_m2": 188.74000000000004,
+            "unit_int_eur_per_m2": 250.0
+          },
+          "result_eur": 47185.0
+        },
+        "exterior": {
+          "formula": "net_area_m2 × unit_ext",
+          "values": {
+            "net_area_m2": 207.0875,
+            "unit_ext_eur_per_m2": 400.0
+          },
+          "result_eur": 82835.0
+        }
+      }
+    },
+    "floor_system": {
+      "calculations": {
+        "foundation": {
+          "formula": "area_m2 × foundation_unit",
+          "values": {
+            "area_m2": 309.21000000000004,
+            "foundation_unit_eur_per_m2": 200.0
+          },
+          "result_eur": 61842.0
+        },
+        "floors": {
+          "formula": "area_m2 × floor_coef × floors_count",
+          "values": {
+            "area_m2": 309.21000000000004,
+            "floor_coef_eur_per_m2": 110.0,
+            "floors_count": 1
+          },
+          "result_eur": 34013.1
+        },
+        "total_floor_eur": 95855.1
+      }
+    },
+    "ceiling_system": {
+      "calculations": {
+        "formula": "area_m2 × ceiling_coef × floors_count",
+        "values": {
+          "area_m2": 309.21000000000004,
+          "ceiling_coef_eur_per_m2": 40.0,
+          "floors_count": 1
+        },
+        "result_eur": 12368.4
+      }
+    },
+    "basement_system": {
+      "calculations": {
+        "exists": false,
+        "formula": "area_beci_m2 × coef_beci_eur_per_m2",
+        "values": {
+          "area_beci_m2": 0.0,
+          "coef_beci_eur_per_m2": 0.0
+        },
+        "result_eur": 0.0
+      }
+    },
+    "wall_finishes": {
+      "calculations": {
+        "interior": {
+          "formula": "net_area_int_m2 × finish_unit_int",
+          "values": {
+            "net_area_int_m2": 188.74000000000004,
+            "finish_unit_int_eur_per_m2": 45.0
+          },
+          "result_eur": 8493.3
+        },
+        "exterior": {
+          "formula": "net_area_ext_m2 × finish_unit_ext",
+          "values": {
+            "net_area_ext_m2": 207.0875,
+            "finish_unit_ext_eur_per_m2": 70.0
+          },
+          "result_eur": 14496.12
+        }
+      }
+    },
+    "services": {
+      "calculations": {
+        "electricity": {
+          "formula": "area_m2 × coef_electricitate × energetic_coef",
+          "values": {
+            "area_m2": 309.21000000000004,
+            "coef_electricitate_eur_per_m2": 60.0,
+            "energetic_coef": 1.08
+          },
+          "result_eur": 20036.81
+        },
+        "sewage": {
+          "formula": "area_m2 × coef_canalizare",
+          "values": {
+            "area_m2": 309.21000000000004,
+            "coef_canalizare_eur_per_m2": 45.0
+          },
+          "result_eur": 13914.45
+        },
+        "heating": {
+          "formula": "area_m2 × coef_incalzire × type_coef",
+          "values": {
+            "area_m2": 309.21000000000004,
+            "coef_incalzire_eur_per_m2": 70.0,
+            "type": "gaz",
+            "type_coef": 1.0
+          },
+          "result_eur": 21644.7
+        },
+        "ventilation": {
+          "formula": "area_m2 × ventilation_unit",
+          "values": {
+            "area_m2": 309.21000000000004,
+            "ventilation_unit_eur_per_m2": 30.0
+          },
+          "result_eur": 9276.3
+        }
+      },
+      "totals": {
+        "electricity_eur": 20036.81,
+        "sewage_eur": 13914.45,
+        "heating_eur": 21644.7,
+        "ventilation_eur": 9276.3,
+        "services_sum_eur": 64872.26
+      }
+    }
+  },
+  "offer_calculations": {
+    "level_selected": "CASA_COMPLETA",
+    "pre_context_house_value_eur": 426584.36,
+    "organization_component": {
+      "formula": "pre_context × org_pct_effective × acces_coef × teren_coef",
+      "values": {
+        "pre_context": 426584.36,
+        "org_pct_effective": 0.05,
+        "acces_coef": 1.06,
+        "teren_coef": 1.1
+      },
+      "result_eur": 24869.87
+    },
+    "supervising_component": {
+      "formula": "pre_context × supervising_pct",
+      "values": {
+        "pre_context": 426584.36,
+        "supervising_pct": 0.03
+      },
+      "result_eur": 12797.53
+    },
+    "profit_component": {
+      "formula": "pre_context × profit_pct",
+      "values": {
+        "pre_context": 426584.36,
+        "profit_pct": 0.1
+      },
+      "result_eur": 42658.44
+    },
+    "semi_value": {
+      "formula": "pre_context + org_ctx + supervising + profit",
+      "values": {
+        "pre_context": 426584.36,
+        "org_ctx": 24869.87,
+        "supervising": 12797.53,
+        "profit": 42658.44
+      },
+      "result_eur": 506910.19
+    },
+    "final_offer": {
+      "formula": "semi_value × (1 + VAT)",
+      "values": {
+        "semi_value": 506910.19,
+        "VAT": 0.19
+      },
+      "result_eur": 603223.13
+    }
+  },
+  "engine_plans": [
+    {
+      "planIndex": 1,
+      "planId": "p01",
+      "house_area": {
+        "scale_meters_per_pixel": 0.0305,
+        "surface_estimation": {
+          "by_scale_m2": 147.13,
+          "by_labels_m2": 166.6,
+          "final_area_m2": 166.6,
+          "method_used": "by_labels"
+        },
+        "confidence": "High",
+        "verification_notes": "Metoda geometrică (147.13 m²) a fost calculată folosind o aproximare a conturului exterior (bounding box minus decupaje) și este imprecisă din cauza formei complexe a clădirii. Rezultatul este contrazis de logică, fiind mai mic decât suma suprafețelor interioare nete. Metoda bazată pe etichete (166.60 m²) este considerată mult mai fiabilă, deoarece însumează valorile explicite (F=...) pentru fiecare încăpere de pe plan (Garage: 24.80, Garderobe: 7.15, WC: 6.47, Speis: 4.80, Kochen: 20.61, Flur: 8.90, Flur: 10.94, Technikraum: 11.07, Büro: 10.78, Wohnen/Essen: 36.36, Abstellraum: 24.72). Deși diferența este sub 25%, metoda bazată pe etichete a fost aleasă ca fiind net superioară în acuratețe și consistență logică."
+      },
+      "wall_areas": {
+        "source_file": "perimeter/walls_measurements_gemini.json",
+        "standards": {
+          "country": "Germany",
+          "wall_height_m": 2.5,
+          "standard": "DIN 277",
+          "description": "Standard German de dimensionare spațială — înălțimea tipică a pereților în locuințe rezidențiale."
+        },
+        "inputs": {
+          "interior_length_m": 50.05,
+          "exterior_length_m": 42.9
+        },
+        "computed_areas": {
+          "interior_walls_area_m2": 125.12,
+          "exterior_walls_area_m2": 107.25,
+          "total_walls_area_m2": 232.37
+        },
+        "notes": "Ariile au fost calculate automat pe baza valorilor medii din walls_measurements_gemini.json. Rezultatele sunt în conformitate cu standardul german DIN 277, folosind o înălțime de 2.5m."
+      },
+      "openings": [
+        {
+          "id": 1,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 2,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 3,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 4,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 5,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 6,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 7,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 8,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 9,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 10,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 11,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 12,
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0
+        },
+        {
+          "id": 13,
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0
+        },
+        {
+          "id": 14,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 15,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 16,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 17,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 18,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 19,
+          "type": "double_window",
+          "status": "exterior",
+          "width_m": 2.965
+        }
+      ],
+      "roof_price": {
+        "meta": {
+          "generated_at": "2025-11-13T13:33:05.898363Z",
+          "currency": "EUR",
+          "perimeter_source": "estimated as 4*sqrt(area)"
+        },
+        "inputs": {
+          "house_area_m2": 166.6,
+          "perimeter_m": 51.63,
+          "roof_type": {
+            "name_de": "Mansardendach mit Fußwalm",
+            "name_en": "Mansard roof with foot hip",
+            "description": "Variante de mansard cu zone hip inferioare, design elegant dar complex.",
+            "cost_range_eur_per_m2": [
+              115.0,
+              165.0
+            ],
+            "extra_walls_price_eur_per_m": 120.0
+          },
+          "coefficients": {
+            "roof_overhang_m": 0.4,
+            "sheet_metal_price_per_m": 28.0,
+            "insulation_price_per_m2": 22.0,
+            "tile_price_per_m2": 35.0,
+            "metal_price_per_m2": 22.0,
+            "membrane_price_per_m2": 12.0
+          },
+          "material": {
+            "selected": null,
+            "unit_price_eur_per_m2": 0.0
+          }
+        },
+        "components": {
+          "roof_base": {
+            "min_total_eur": 19159.0,
+            "max_total_eur": 27489.0,
+            "average_total_eur": 23324.0
+          },
+          "sheet_metal": {
+            "formula": "perimeter_m * roof_overhang_m * sheet_metal_price_per_m",
+            "total_eur": 578.25
+          },
+          "extra_walls": {
+            "formula": "perimeter_m * extra_walls_price_eur_per_m",
+            "total_eur": 6195.53
+          },
+          "insulation": {
+            "formula": "house_area_m2 * insulation_price_per_m2",
+            "total_eur": 3665.2
+          },
+          "material": {
+            "formula": "house_area_m2 * material_unit_price_eur_per_m2",
+            "total_eur": 0.0
+          }
+        },
+        "roof_final_total_eur": 33762.98
+      }
+    },
+    {
+      "planIndex": 2,
+      "planId": "p02",
+      "house_area": {
+        "scale_meters_per_pixel": 0.0305,
+        "surface_estimation": {
+          "by_scale_m2": 145.08,
+          "by_labels_m2": 140.14,
+          "final_area_m2": 142.61,
+          "method_used": "average"
+        },
+        "confidence": "high",
+        "verification_notes": "Cele două metode au produs rezultate foarte apropiate (diferență de ~3.5%), indicând o coerență ridicată. Metoda geometrică a calculat aria brută a etajului (145.08 m²) pe baza dimensiunilor exterioare, în timp ce metoda semantică a însumat suprafețele utile specificate (inclusiv balcoane), totalizând 140.14 m². Diferența de ~5 m² este o estimare plauzibilă pentru suprafața ocupată de pereții structurali și interiori. Deoarece diferența este sub 25%, s-a calculat media aritmetică pentru estimarea finală."
+      },
+      "wall_areas": {
+        "source_file": "perimeter/walls_measurements_gemini.json",
+        "standards": {
+          "country": "Germany",
+          "wall_height_m": 2.5,
+          "standard": "DIN 277",
+          "description": "Standard German de dimensionare spațială — înălțimea tipică a pereților în locuințe rezidențiale."
+        },
+        "inputs": {
+          "interior_length_m": 50.05,
+          "exterior_length_m": 42.9
+        },
+        "computed_areas": {
+          "interior_walls_area_m2": 125.12,
+          "exterior_walls_area_m2": 107.25,
+          "total_walls_area_m2": 232.37
+        },
+        "notes": "Ariile au fost calculate automat pe baza valorilor medii din walls_measurements_gemini.json. Rezultatele sunt în conformitate cu standardul german DIN 277, folosind o înălțime de 2.5m."
+      },
+      "openings": [
+        {
+          "id": 1,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 2,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 3,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 4,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 5,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 6,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 7,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 8,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 9,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 10,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 11,
+          "type": "door",
+          "status": "interior",
+          "width_m": 1.0
+        },
+        {
+          "id": 12,
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0
+        },
+        {
+          "id": 13,
+          "type": "double_door",
+          "status": "interior",
+          "width_m": 2.0
+        },
+        {
+          "id": 14,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 15,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 16,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 17,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 18,
+          "type": "window",
+          "status": "exterior",
+          "width_m": 1.0
+        },
+        {
+          "id": 19,
+          "type": "double_window",
+          "status": "exterior",
+          "width_m": 2.965
+        }
+      ],
+      "roof_price": {
+        "meta": {
+          "generated_at": "2025-11-13T13:33:09.939026Z",
+          "currency": "EUR",
+          "perimeter_source": "estimated as 4*sqrt(area)"
+        },
+        "inputs": {
+          "house_area_m2": 142.61,
+          "perimeter_m": 47.77,
+          "roof_type": {
+            "name_de": "Mansardendach mit Fußwalm",
+            "name_en": "Mansard roof with foot hip",
+            "description": "Variante de mansard cu zone hip inferioare, design elegant dar complex.",
+            "cost_range_eur_per_m2": [
+              115.0,
+              165.0
+            ],
+            "extra_walls_price_eur_per_m": 120.0
+          },
+          "coefficients": {
+            "roof_overhang_m": 0.4,
+            "sheet_metal_price_per_m": 28.0,
+            "insulation_price_per_m2": 22.0,
+            "tile_price_per_m2": 35.0,
+            "metal_price_per_m2": 22.0,
+            "membrane_price_per_m2": 12.0
+          },
+          "material": {
+            "selected": null,
+            "unit_price_eur_per_m2": 0.0
+          }
+        },
+        "components": {
+          "roof_base": {
+            "min_total_eur": 16400.15,
+            "max_total_eur": 23530.65,
+            "average_total_eur": 19965.4
+          },
+          "sheet_metal": {
+            "formula": "perimeter_m * roof_overhang_m * sheet_metal_price_per_m",
+            "total_eur": 535.0
+          },
+          "extra_walls": {
+            "formula": "perimeter_m * extra_walls_price_eur_per_m",
+            "total_eur": 5732.13
+          },
+          "insulation": {
+            "formula": "house_area_m2 * insulation_price_per_m2",
+            "total_eur": 3137.42
+          },
+          "material": {
+            "formula": "house_area_m2 * material_unit_price_eur_per_m2",
+            "total_eur": 0.0
+          }
+        },
+        "roof_final_total_eur": 29369.95
+      }
+    }
+  ]
+}

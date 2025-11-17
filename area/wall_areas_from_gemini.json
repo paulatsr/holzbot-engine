@@ -1,0 +1,31 @@
+{
+  "source_file": "aggregated_from_plans",
+  "standards": {
+    "country": "Germany",
+    "wall_height_m": 2.5,
+    "standard": "DIN 277",
+    "description": "Standard German de dimensionare spațială — înălțimea tipică a pereților în locuințe rezidențiale."
+  },
+  "inputs": {
+    "interior_length_m": 100.1,
+    "exterior_length_m": 85.8
+  },
+  "computed_areas": {
+    "interior_walls_area_m2": 250.24,
+    "exterior_walls_area_m2": 214.5,
+    "total_walls_area_m2": 464.74
+  },
+  "plans": [
+    {
+      "plan_file": "wall_areas_from_gemini_p01.json",
+      "interior_walls_area_m2": 125.12,
+      "exterior_walls_area_m2": 107.25
+    },
+    {
+      "plan_file": "wall_areas_from_gemini_p02.json",
+      "interior_walls_area_m2": 125.12,
+      "exterior_walls_area_m2": 107.25
+    }
+  ],
+  "notes": "Sumă multi-plan a ariilor pereților (DIN 277)."
+}

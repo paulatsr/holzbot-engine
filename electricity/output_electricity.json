@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "component": "electricity",
+    "generated_at": "2025-11-07T11:07:40.839979Z",
+    "currency": "EUR"
+  },
+  "inputs": {
+    "area_m2": 67.22,
+    "coefficient_electricity_per_m2": 12.5
+  },
+  "calculation": {
+    "formula": "area_m2 * coefficient_electricity_per_m2",
+    "result": 840.25
+  }
+}

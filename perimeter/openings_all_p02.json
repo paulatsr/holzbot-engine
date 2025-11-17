@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 2,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 3,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 4,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 5,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 6,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 7,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 8,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 9,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 10,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 11,
+    "type": "door",
+    "status": "interior",
+    "width_m": 1.0
+  },
+  {
+    "id": 12,
+    "type": "double_door",
+    "status": "interior",
+    "width_m": 2.0
+  },
+  {
+    "id": 13,
+    "type": "double_door",
+    "status": "interior",
+    "width_m": 2.0
+  },
+  {
+    "id": 14,
+    "type": "window",
+    "status": "exterior",
+    "width_m": 1.0
+  },
+  {
+    "id": 15,
+    "type": "window",
+    "status": "exterior",
+    "width_m": 1.0
+  },
+  {
+    "id": 16,
+    "type": "window",
+    "status": "exterior",
+    "width_m": 1.0
+  },
+  {
+    "id": 17,
+    "type": "window",
+    "status": "exterior",
+    "width_m": 1.0
+  },
+  {
+    "id": 18,
+    "type": "window",
+    "status": "exterior",
+    "width_m": 1.0
+  },
+  {
+    "id": 19,
+    "type": "double_window",
+    "status": "exterior",
+    "width_m": 2.965
+  }
+]

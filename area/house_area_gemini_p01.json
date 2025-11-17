@@ -1,0 +1,11 @@
+{
+  "scale_meters_per_pixel": 0.0305,
+  "surface_estimation": {
+    "by_scale_m2": 147.13,
+    "by_labels_m2": 166.6,
+    "final_area_m2": 166.6,
+    "method_used": "by_labels"
+  },
+  "confidence": "High",
+  "verification_notes": "Metoda geometrică (147.13 m²) a fost calculată folosind o aproximare a conturului exterior (bounding box minus decupaje) și este imprecisă din cauza formei complexe a clădirii. Rezultatul este contrazis de logică, fiind mai mic decât suma suprafețelor interioare nete. Metoda bazată pe etichete (166.60 m²) este considerată mult mai fiabilă, deoarece însumează valorile explicite (F=...) pentru fiecare încăpere de pe plan (Garage: 24.80, Garderobe: 7.15, WC: 6.47, Speis: 4.80, Kochen: 20.61, Flur: 8.90, Flur: 10.94, Technikraum: 11.07, Büro: 10.78, Wohnen/Essen: 36.36, Abstellraum: 24.72). Deși diferența este sub 25%, metoda bazată pe etichete a fost aleasă ca fiind net superioară în acuratețe și consistență logică."
+}
