@@ -1,0 +1,50 @@
+{
+  "building_info": {
+    "total_plans": 2,
+    "floors_detected": 2,
+    "is_single_story": false,
+    "building_type": "residential"
+  },
+  "classifications": [
+    {
+      "plan_id": "cluster_2",
+      "floor_type": "top_floor",
+      "confidence": "high",
+      "reasoning": "The plan has text labels in German indicating bedrooms and a bathroom, which are typical for a top floor. The staircase ends here, as indicated by the downward arrow.",
+      "indicators_found": [
+        "Text labels: Schlafen, Bad",
+        "Stair direction: down",
+        "No exterior doors"
+      ],
+      "estimated_area_m2": 80.0,
+      "door_count_exterior": 0,
+      "stair_direction": "down"
+    },
+    {
+      "plan_id": "cluster_3",
+      "floor_type": "ground_floor",
+      "confidence": "high",
+      "reasoning": "The plan includes a large kitchen and living area, which are typical for a ground floor. The presence of multiple exterior doors and a staircase going up supports this classification.",
+      "indicators_found": [
+        "Text labels: Kochen/Essen, Wohnen",
+        "Multiple exterior doors",
+        "Stair direction: up"
+      ],
+      "estimated_area_m2": 100.0,
+      "door_count_exterior": 2,
+      "stair_direction": "up"
+    }
+  ],
+  "validation": {
+    "has_ground_floor": true,
+    "has_top_floor": true,
+    "ground_floor_plan_id": "cluster_3",
+    "top_floor_plan_id": "cluster_2",
+    "warnings": []
+  },
+  "metadata_files": [
+    "/Users/paulb/Documents/holzbot/engine/new/runner/jobs/segmentation_job_20251119_101447/plan_metadata/cluster_2.json",
+    "/Users/paulb/Documents/holzbot/engine/new/runner/jobs/segmentation_job_20251119_101447/plan_metadata/cluster_3.json"
+  ],
+  "generated_at": "2025-11-19T08:15:47.217708Z"
+}

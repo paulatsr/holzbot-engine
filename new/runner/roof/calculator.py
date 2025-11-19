@@ -52,20 +52,24 @@ def _perimeter_from_area(area_m2: float) -> float:
 
 def calculate_roof_price(
     house_area_m2: float,
+    ceiling_area_m2: float,
     perimeter_m: float | None,
     roof_type_user: str,
     material_user: str | None = None,
-    frontend_data: dict | None = None
+    frontend_data: dict | None = None,
+    total_floors: int = 1
 ) -> dict:
     """
     Calculează prețul acoperișului cu toate componentele.
     
     Args:
-        house_area_m2: Aria casei (m²) - din area module
+        house_area_m2: Aria acoperișului extins (m²) - din area module (roof_m2)
+        ceiling_area_m2: Aria tavanului util (m²) - pentru calcul izolație
         perimeter_m: Perimetrul casei (m) - din perimeter module sau None
         roof_type_user: Tipul ales de utilizator (RO/EN/DE)
         material_user: Materialul ales (RO) - "Țiglă"/"Tablă"/"Membrană"
         frontend_data: Date suplimentare din frontend (opțional)
+        total_floors: Numărul total de etaje (pentru context)
     
     Returns:
         Dict cu breakdown complet costuri
@@ -149,8 +153,10 @@ def calculate_roof_price(
     # 3) PEREȚI EXTRA (specifici tipului de acoperiș)
     extra_walls_total = perimeter_m * extra_walls_price_per_m
     
-    # 4) IZOLAȚIE
-    insulation_total = house_area_m2 * insulation_price_per_m2
+    # 4) IZOLAȚIE (CORECTAT - pe suprafața tavanului util, nu pe acoperiș)
+    # ceiling_area_m2 este suprafața netă (fără pereți) calculată în area.py
+    # Aceasta reprezintă exact zona unde se montează izolația (lână minerală)
+    insulation_total = ceiling_area_m2 * insulation_price_per_m2
     
     # 5) MATERIAL ÎNVELITOARE
     material_total = house_area_m2 * material_unit_price
@@ -168,11 +174,13 @@ def calculate_roof_price(
         "meta": {
             "generated_at": datetime.utcnow().isoformat() + "Z",
             "currency": currency,
-            "perimeter_source": perimeter_source
+            "perimeter_source": perimeter_source,
+            "total_floors": total_floors
         },
         
         "inputs": {
             "house_area_m2": round(house_area_m2, 2),
+            "ceiling_area_m2": round(ceiling_area_m2, 2),
             "perimeter_m": round(perimeter_m, 2),
             
             "roof_type": {
@@ -220,9 +228,10 @@ def calculate_roof_price(
             },
             
             "insulation": {
-                "description": "Izolație acoperiș",
-                "formula": "house_area_m2 × insulation_price_per_m2",
-                "total_eur": round(insulation_total, 2)
+                "description": "Izolație tavan (sub acoperiș)",
+                "formula": "ceiling_area_m2 × insulation_price_per_m2",
+                "total_eur": round(insulation_total, 2),
+                "note": "Calculată pe suprafața netă a tavanului (fără pereți)"
             },
             
             "material": {

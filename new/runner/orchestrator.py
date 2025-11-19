@@ -25,6 +25,7 @@ from .roof.jobs import run_roof_for_run, RoofJobResult
 # Importuri noi pentru Pricing & Offer
 from .pricing.jobs import run_pricing_for_run, PricingJobResult
 from .offer_builder import build_final_offer
+from .pdf_generator import generate_complete_offer_pdf
 
 
 # =========================================================
@@ -379,6 +380,36 @@ def run_segmentation_and_classification_for_document(
             print("="*70)
         
         pipeline_timer.add_step("13. Offer Generation", t.end_time - t.start_time)
+        
+        # =========================================================
+        # STEP 14: PDF GENERATION
+        # =========================================================
+        with Timer("STEP 14: PDF Generation - Create complete offer PDF") as t:
+            print(f"\n📄 Generare PDF Ofertă Completă...")
+            
+            try:
+                pdf_path = generate_complete_offer_pdf(
+                    run_id=run_id,
+                    output_path=None  # Path automat: output/run_id/offer_pdf/oferta_run_id.pdf
+                )
+                
+                print(f"\n{'='*70}")
+                print(f"✅ PDF GENERAT CU SUCCES!")
+                print(f"{'='*70}")
+                print(f"📍 Locație: {pdf_path}")
+                print(f"📏 Mărime: {pdf_path.stat().st_size / 1024:.1f} KB")
+                print(f"{'='*70}\n")
+                
+            except Exception as e:
+                print(f"\n{'='*70}")
+                print(f"⚠️ EROARE la generarea PDF:")
+                print(f"{'='*70}")
+                print(f"{e}")
+                print(f"{'='*70}\n")
+                import traceback
+                traceback.print_exc()
+        
+        pipeline_timer.add_step("14. PDF Generation", t.end_time - t.start_time)
 
     else:
         print("\nℹ️ Niciun plan house_blueprint – sar peste pipeline-ul complet.")
