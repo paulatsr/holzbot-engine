@@ -17,7 +17,7 @@ Rulează, pentru FIECARE plan cunoscut de multi_plan_runner:
 9) Rezumat final de preț casă (house_price_summary)
 """
 
-from runner.core.multi_plan_runner import run_for_plans
+from runner.workers.plan_worker import run_for_plans
 
 # --- GEOMETRY ---
 from runner.geometry.scale_from_plan import (

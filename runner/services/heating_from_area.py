@@ -3,14 +3,14 @@
 import json
 from datetime import datetime
 
-from runner.core.paths import (
+from runner.utils.io import (
     HOUSE_AREA_JSON,
     HEATING_COEFFS_JSON,
     HEATING_OUTPUT_JSON,
     ENERGY_SITE_COEFFS_JSON,
     OFFER_OVERRIDES_JSON,
 )
-from runner.core.multi_plan_runner import run_for_plans
+from runner.workers.plan_worker import run_for_plans
 from runner.ui_export import record_json
 
 

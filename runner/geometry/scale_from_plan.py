@@ -5,9 +5,9 @@ from pathlib import Path
 
 from openai import OpenAI
 
-from runner.core.config import get_openai_api_key
-from runner.core.paths import PLAN_IMAGE, METERS_PIXEL_DIR, SCALE_RESULT_JSON
-from runner.core.multi_plan_runner import run_for_plans
+from runner.config.settings import get_openai_api_key
+from runner.utils.io import PLAN_IMAGE, METERS_PIXEL_DIR, SCALE_RESULT_JSON
+from runner.workers.plan_worker import run_for_plans
 from runner.ui_export import record_json  # la fel ca înainte, doar că mutat în runner/
 
 PROMPT = """

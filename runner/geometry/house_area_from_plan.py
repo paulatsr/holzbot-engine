@@ -4,13 +4,13 @@ from pathlib import Path
 
 import google.generativeai as genai
 
-from runner.core.config import get_gemini_api_key
-from runner.core.paths import (
+from runner.config.settings import get_gemini_api_key
+from runner.utils.io import (
     PLAN_IMAGE,
     SCALE_RESULT_JSON,
     HOUSE_AREA_JSON,
 )
-from runner.core.multi_plan_runner import run_for_plans
+from runner.workers.plan_worker import run_for_plans
 from runner.ui_export import record_json
 
 

@@ -3,12 +3,12 @@
 import json
 from pathlib import Path
 
-from runner.core.paths import (
+from runner.utils.io import (
     WALLS_MEASUREMENTS_JSON,
     WALLS_AREA_FROM_LENGTHS_JSON,
 )
-from runner.core.config import WALL_HEIGHTS_M
-from runner.core.multi_plan_runner import run_for_plans
+from runner.config.settings import WALL_HEIGHTS_M
+from runner.workers.plan_worker import run_for_plans
 from runner.ui_export import record_json
 
 

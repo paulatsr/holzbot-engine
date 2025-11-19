@@ -7,14 +7,14 @@ from pathlib import Path
 import google.generativeai as genai
 from google.api_core.exceptions import ResourceExhausted
 
-from runner.core.config import get_gemini_api_key
-from runner.core.paths import (
+from runner.config.settings import get_gemini_api_key
+from runner.utils.io import (
     PLAN_IMAGE,
     SCALE_RESULT_JSON,
     WALLS_MEASUREMENTS_JSON,
     PERIMETER_DIR,
 )
-from runner.core.multi_plan_runner import run_for_plans
+from runner.workers.plan_worker import run_for_plans
 from runner.ui_export import record_json
 
 

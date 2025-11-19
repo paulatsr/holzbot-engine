@@ -4,12 +4,12 @@ import json
 from collections import defaultdict
 from datetime import datetime
 
-from runner.core.paths import (
+from runner.utils.io import (
     OPENINGS_ALL_JSON,
     OPENINGS_COEFFS_JSON,
     OPENINGS_PRICING_JSON,
 )
-from runner.core.multi_plan_runner import run_for_plans
+from runner.workers.plan_worker import run_for_plans
 from runner.ui_export import record_json
 
 

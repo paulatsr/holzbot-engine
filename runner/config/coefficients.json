@@ -1,0 +1,14 @@
+{
+  "structure": "area/structure_coefficients.json",
+  "walls": "area/wall_coefficients.json",
+  "foundation": "area/foundation_coefficients.json",
+  "offer": "area/offer_coefficients.json",
+  "ventilation": "ventilation/ventilation_coefficients.json",
+  "services": {
+    "electricity": "electricity/electricity_coefficients.json",
+    "sewage": "sewage/sewage_coefficients.json",
+    "heating": "heating/heating_coefficients.json"
+  },
+  "openings": "openings/openings_prices.json",
+  "roof": "roof/roof_coefficients.json"
+}
