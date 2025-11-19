@@ -1,25 +1,22 @@
-# new/runner/pdf_generator/utils.py
+# utils.py - Funcții helper pentru formatare și I/O
 from __future__ import annotations
 import json
 from pathlib import Path
-from datetime import datetime
-
 
 def format_money(value: float | int | None, currency: str = "EUR") -> str:
-    """Formatează valori monetare: 1234.56 → 1.234,56 EUR"""
+    """Formatează o sumă de bani cu separatori corecți"""
     if value is None:
         return "—"
     try:
         v = float(value)
-        # Formatare germană: . pentru mii, , pentru zecimale
+        # Format: 1.234,56 EUR
         formatted = f"{v:,.2f}".replace(",", " ").replace(".", ",").replace(" ", ".")
         return f"{formatted} {currency}"
     except Exception:
         return "—"
 
-
 def format_area(value: float | int | None) -> str:
-    """Formatează arii: 123.45 → 123,45 m²"""
+    """Formatează o suprafață în m²"""
     if value is None:
         return "—"
     try:
@@ -28,9 +25,8 @@ def format_area(value: float | int | None) -> str:
     except Exception:
         return "—"
 
-
 def format_length(value: float | int | None) -> str:
-    """Formatează lungimi: 12.34 → 12,34 m"""
+    """Formatează o lungime în m"""
     if value is None:
         return "—"
     try:
@@ -39,21 +35,19 @@ def format_length(value: float | int | None) -> str:
     except Exception:
         return "—"
 
-
 def safe_get(data: dict, *keys, default=None):
-    """Safe nested dict access"""
-    current = data
-    for key in keys:
-        if not isinstance(current, dict):
+    """Obține o valoare din dict nested în siguranță"""
+    cur = data
+    for k in keys:
+        if not isinstance(cur, dict):
             return default
-        current = current.get(key)
-        if current is None:
+        cur = cur.get(k)
+        if cur is None:
             return default
-    return current
-
+    return cur
 
 def load_json_safe(path: Path) -> dict:
-    """Load JSON with error handling"""
+    """Încarcă un fișier JSON în siguranță, returnând dict gol dacă eșuează"""
     if not path or not path.exists():
         return {}
     try:
@@ -62,21 +56,24 @@ def load_json_safe(path: Path) -> dict:
     except Exception:
         return {}
 
-
 def get_plan_image_path(plan_id: str, base_dir: Path) -> Path | None:
-    """
-    Caută imaginea pentru un plan specific:
-    - base_dir/plan_id/plan.jpg
-    - base_dir/classified/blueprints/plan_id.jpg
-    """
+    """Caută imaginea unui plan în mai multe locații posibile"""
     candidates = [
         base_dir / plan_id / "plan.jpg",
+        base_dir / plan_id / "plan.png",
         base_dir / "classified" / "blueprints" / f"{plan_id}.jpg",
         base_dir / "segmentation" / "classified" / "blueprints" / f"{plan_id}.jpg",
+        base_dir / "detections" / f"{plan_id}" / "plan.jpg",
     ]
     
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate
+    # Caută și în subfolderele de tip plan_X_cluster_Y
+    if base_dir.exists():
+        for item in base_dir.rglob("plan.jpg"):
+            if plan_id.lower() in str(item.parent).lower():
+                return item
+    
+    for c in candidates:
+        if c.exists():
+            return c
     
     return None

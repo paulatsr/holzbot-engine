@@ -1,41 +1,42 @@
-# new/runner/pdf_generator/styles.py
+# styles.py - Definirea stilurilor pentru PDF
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib import colors
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from pathlib import Path
 
-
 # Încearcă să încarce fonturile DejaVu
-FONTS_DIR = Path(__file__).parent.parent.parent / "pdf_assets" / "fonts"
+FONTS_DIR = Path(__file__).parent.parent / "pdf_assets" / "fonts"
 BASE_FONT = "Helvetica"
 BOLD_FONT = "Helvetica-Bold"
 
 try:
     font_regular = FONTS_DIR / "DejaVuSans.ttf"
     font_bold = FONTS_DIR / "DejaVuSans-Bold.ttf"
-    
     if font_regular.exists() and font_bold.exists():
         pdfmetrics.registerFont(TTFont("DejaVuSans", str(font_regular)))
         pdfmetrics.registerFont(TTFont("DejaVuSans-Bold", str(font_bold)))
         BASE_FONT = "DejaVuSans"
         BOLD_FONT = "DejaVuSans-Bold"
 except Exception:
-    pass  # Fallback la Helvetica
+    pass
 
+_CACHED_STYLES = None
 
 def get_styles():
-    """Returnează stilurile custom pentru PDF"""
+    global _CACHED_STYLES
+    if _CACHED_STYLES is not None:
+        return _CACHED_STYLES
+    
     styles = getSampleStyleSheet()
     
-    # Titluri
     styles.add(ParagraphStyle(
-        name="Title",
+        name="TitleMain",
         fontName=BOLD_FONT,
         fontSize=18,
         leading=22,
         spaceAfter=12,
-        textColor=colors.HexColor("#1c1c1c")
+        textColor=colors.HexColor("#1c1c1c"),
     ))
     
     styles.add(ParagraphStyle(
@@ -45,7 +46,7 @@ def get_styles():
         leading=18,
         spaceBefore=12,
         spaceAfter=6,
-        textColor=colors.HexColor("#2c2c2c")
+        textColor=colors.HexColor("#2c2c2c"),
     ))
     
     styles.add(ParagraphStyle(
@@ -55,7 +56,7 @@ def get_styles():
         leading=15,
         spaceBefore=10,
         spaceAfter=4,
-        textColor=colors.HexColor("#3c3c3c")
+        textColor=colors.HexColor("#3c3c3c"),
     ))
     
     styles.add(ParagraphStyle(
@@ -65,16 +66,15 @@ def get_styles():
         leading=13,
         spaceBefore=8,
         spaceAfter=3,
-        textColor=colors.HexColor("#4c4c4c")
+        textColor=colors.HexColor("#4c4c4c"),
     ))
     
-    # Text normal
     styles.add(ParagraphStyle(
         name="Body",
         fontName=BASE_FONT,
         fontSize=10,
         leading=14,
-        spaceAfter=4
+        spaceAfter=4,
     ))
     
     styles.add(ParagraphStyle(
@@ -82,22 +82,22 @@ def get_styles():
         fontName=BASE_FONT,
         fontSize=9,
         leading=12,
-        spaceAfter=3
+        spaceAfter=3,
+        textColor=colors.HexColor("#666666"),
     ))
     
-    # Celule tabel
     styles.add(ParagraphStyle(
         name="Cell",
         fontName=BASE_FONT,
         fontSize=9,
-        leading=11
+        leading=11,
     ))
     
     styles.add(ParagraphStyle(
         name="CellBold",
         fontName=BOLD_FONT,
         fontSize=9,
-        leading=11
+        leading=11,
     ))
     
     styles.add(ParagraphStyle(
@@ -105,10 +105,9 @@ def get_styles():
         fontName=BASE_FONT,
         fontSize=8,
         leading=10,
-        textColor=colors.HexColor("#666666")
+        textColor=colors.HexColor("#666666"),
     ))
     
-    # Info box
     styles.add(ParagraphStyle(
         name="InfoBox",
         fontName=BASE_FONT,
@@ -117,13 +116,12 @@ def get_styles():
         leftIndent=10,
         rightIndent=10,
         spaceAfter=6,
-        textColor=colors.HexColor("#444444")
+        textColor=colors.HexColor("#444444"),
     ))
     
+    _CACHED_STYLES = styles
     return styles
 
-
-# Culori corporate
 COLORS = {
     "primary": colors.HexColor("#1c1c1c"),
     "secondary": colors.HexColor("#4a4a4a"),
