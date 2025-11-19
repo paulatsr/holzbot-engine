@@ -1,120 +1,184 @@
-# new/runner/offer_builder.py
+# new/runner/pricing/calculator.py
 from __future__ import annotations
 import json
 from pathlib import Path
-from datetime import datetime
 
-def build_final_offer(
-    pricing_data: dict, 
-    offer_level: str, 
-    output_path: Path
+from .config import (
+    FINISH_COEFFS_FILE,
+    FOUNDATION_COEFFS_FILE,
+    OPENINGS_PRICES_FILE,
+    SYSTEM_PREFAB_FILE,
+    AREA_COEFFS_FILE,
+    ELECTRICITY_COEFFS_FILE,
+    HEATING_COEFFS_FILE,
+    VENTILATION_COEFFS_FILE,
+    SEWAGE_COEFFS_FILE
+)
+
+from .modules.finishes import calculate_finishes_details
+from .modules.foundation import calculate_foundation_details
+from .modules.openings import calculate_openings_details
+from .modules.walls import calculate_walls_details
+from .modules.floors import calculate_floors_details
+from .modules.roof import calculate_roof_details
+from .modules.utilities import calculate_utilities_details
+
+
+def load_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def calculate_pricing_for_plan(
+    area_data: dict,
+    openings_data: list,
+    frontend_input: dict,  # Acesta este JSON-ul complet din frontend_data.json
+    roof_data: dict | None = None
 ) -> dict:
     """
-    Generează oferta finală detaliată (final_offer.json).
-    
-    offer_level: 'Structură' | 'Structură + ferestre' | 'Casă completă'
+    Calculează toate costurile pentru un plan, folosind structura de date din noul formular.
     """
     
-    # 1. Definim ce categorii intră în fiecare nivel
-    # (True = inclus, False = exclus/opțional)
-    INCLUSIONS = {
-        "Structură": {
-            "foundation": True,
-            "structure": True,
-            "roof": True,
-            "floors_ceilings": True,
-            "openings": False,
-            "finishes": False
+    # 1. LOAD COEFICIENȚI
+    finish_coeffs = load_json(FINISH_COEFFS_FILE)
+    foundation_coeffs = load_json(FOUNDATION_COEFFS_FILE)
+    openings_coeffs = load_json(OPENINGS_PRICES_FILE)
+    system_coeffs = load_json(SYSTEM_PREFAB_FILE)
+    area_coeffs = load_json(AREA_COEFFS_FILE)
+    electricity_coeffs = load_json(ELECTRICITY_COEFFS_FILE)
+    heating_coeffs = load_json(HEATING_COEFFS_FILE)
+    ventilation_coeffs = load_json(VENTILATION_COEFFS_FILE)
+    sewage_coeffs = load_json(SEWAGE_COEFFS_FILE)
+
+    # 2. EXTRAGE ARII (din pipeline-ul de geometrie)
+    walls_data = area_data.get("walls", {})
+    w_int_net = float(walls_data.get("interior", {}).get("net_area_m2", 0.0))
+    w_ext_net = float(walls_data.get("exterior", {}).get("net_area_m2", 0.0))
+    
+    surfaces = area_data.get("surfaces", {})
+    foundation_area = float(surfaces.get("foundation_m2") or 0.0)
+    floor_area = float(surfaces.get("floor_m2") or 0.0)
+    ceiling_area = float(surfaces.get("ceiling_m2") or 0.0)
+
+    # 3. PREFERINȚE UTILIZATOR (Mapare din frontend_data.json)
+    # Structura JSON:
+    # {
+    #   "sistemConstructiv": { "tipSistem": "...", "gradPrefabricare": "...", ... },
+    #   "materialeFinisaj": { "finisajInterior": "...", "fatada": "...", ... },
+    #   "performanta": { "nivelEnergetic": "...", "incalzire": "...", "ventilatie": bool },
+    #   ...
+    # }
+    
+    # Default-uri
+    sist_constr = frontend_input.get("sistemConstructiv", {})
+    mat_finisaj = frontend_input.get("materialeFinisaj", {})
+    performanta = frontend_input.get("performanta", {})
+    
+    # Extragere și normalizare (uppercase pentru a face match cu cheile din JSON-urile de coeficienți)
+    system_constructie = sist_constr.get("tipSistem", "HOLZRAHMEN").upper()
+    prefab_type = sist_constr.get("gradPrefabricare", "PANOURI").upper()
+    foundation_type = sist_constr.get("tipFundatie", "Placă") # Păstrăm case-sensitive dacă cheile din json sunt așa
+    
+    finish_int = mat_finisaj.get("finisajInterior", "Tencuială")
+    finish_ext = mat_finisaj.get("fatada", "Tencuială") # Mapare: fatada -> finish_ext
+    material_tamplarie = mat_finisaj.get("tamplarie", "PVC") # Mapare: tamplarie -> material
+    
+    energy_level = performanta.get("nivelEnergetic", "Standard")
+    heating_type = performanta.get("incalzire", "Gaz")
+    has_ventilation = performanta.get("ventilatie", False)
+    
+    # 4. CALCULE COMPONENTE
+    
+    # Pereți
+    cost_walls = calculate_walls_details(
+        system_coeffs, w_int_net, w_ext_net,
+        system=system_constructie, prefab_type=prefab_type
+    )
+    
+    # Finisaje
+    cost_finishes = calculate_finishes_details(
+        finish_coeffs, w_int_net, w_ext_net,
+        type_int=finish_int, type_ext=finish_ext
+    )
+    
+    # Fundație
+    cost_foundation = calculate_foundation_details(
+        foundation_coeffs, foundation_area,
+        type_foundation=foundation_type
+    )
+    
+    # Deschideri (Uși/Ferestre)
+    cost_openings = calculate_openings_details(
+        openings_coeffs, openings_data,
+        material=material_tamplarie
+    )
+    
+    # Planșee
+    cost_floors_ceilings = calculate_floors_details(
+        area_coeffs, floor_area, ceiling_area
+    )
+
+    # Acoperiș
+    if roof_data:
+        # Putem injecta materialul ales din frontend în datele de roof
+        # dacă calculatorul de roof suportă override de material.
+        # Deocamdată luăm costul geometric.
+        cost_roof = calculate_roof_details(roof_data)
+        
+        # Optional: Ajustare preț în funcție de materialAcoperis din frontend?
+        # Momentan presupunem că roof_data conține deja estimările standard.
+    else:
+        cost_roof = {"total_cost": 0.0, "detailed_items": []}
+    
+    # Utilități
+    cost_utilities = calculate_utilities_details(
+        electricity_coeffs,
+        heating_coeffs,
+        ventilation_coeffs,
+        sewage_coeffs,
+        total_floor_area_m2=floor_area,
+        energy_level=energy_level,
+        heating_type=heating_type,
+        has_ventilation=has_ventilation,
+        has_sewage=True 
+    )
+
+    # 5. TOTAL
+    total_plan_cost = (
+        cost_walls["total_cost"] +
+        cost_finishes["total_cost"] +
+        cost_foundation["total_cost"] +
+        cost_openings["total_cost"] +
+        cost_floors_ceilings["total_cost"] +
+        cost_roof["total_cost"] +
+        cost_utilities["total_cost"]
+    )
+
+    # 6. RETURNARE
+    return {
+        "total_cost_eur": round(total_plan_cost, 2),
+        "currency": "EUR",
+        "breakdown": {
+            "foundation": cost_foundation,
+            "structure_walls": cost_walls,
+            "floors_ceilings": cost_floors_ceilings,
+            "roof": cost_roof,
+            "openings": cost_openings,
+            "finishes": cost_finishes,
+            "utilities": cost_utilities
         },
-        "Structură + ferestre": {
-            "foundation": True,
-            "structure": True,
-            "roof": True,
-            "floors_ceilings": True,
-            "openings": True,
-            "finishes": False
-        },
-        "Casă completă": {
-            "foundation": True,
-            "structure": True,
-            "roof": True,
-            "floors_ceilings": True,
-            "openings": True,
-            "finishes": True
+        "inputs": {
+            "referinta": frontend_input.get("referinta", ""),
+            "system_constructie": system_constructie,
+            "prefab_type": prefab_type,
+            "foundation_type": foundation_type,
+            "finish_interior": finish_int,
+            "finish_exterior": finish_ext,
+            "material_tamplarie": material_tamplarie,
+            "energy_level": energy_level,
+            "heating_type": heating_type,
+            "has_ventilation": has_ventilation
         }
     }
-    
-    # Fallback dacă nivelul nu e recunoscut
-    selection = INCLUSIONS.get(offer_level, INCLUSIONS["Casă completă"])
-    
-    final_json = {
-        "meta": {
-            "generated_at": datetime.utcnow().isoformat() + "Z",
-            "offer_level": offer_level
-        },
-        "summary": {
-            "total_price_eur": 0.0,
-            "currency": "EUR"
-        },
-        "detailed_breakdown": [],  # Lista plată cu TOATE elementele incluse
-        "excluded_options": []     # Ce ar mai putea cumpăra
-    }
-    
-    total_price = 0.0
-    
-    # 2. Iterăm prin categorii și construim listele
-    # Ordinea contează pentru afișare logică
-    categories_order = ["foundation", "structure", "floors_ceilings", "roof", "openings", "finishes"]
-    
-    category_names_ro = {
-        "foundation": "Fundație",
-        "structure": "Structură Pereți",
-        "floors_ceilings": "Planșee și Tavane",
-        "roof": "Acoperiș",
-        "openings": "Tâmplărie (Uși/Ferestre)",
-        "finishes": "Finisaje"
-    }
-    
-    for cat_key in categories_order:
-        data = pricing_data.get(cat_key, {})
-        if not data: continue
-        
-        is_included = selection.get(cat_key, False)
-        
-        # Extragem lista de itemi (unii au 'items', alții 'detailed_items')
-        items = data.get("items") or data.get("detailed_items") or []
-        
-        # Dacă e categorie simplă (fără sub-itemi mulți), creăm un item sintetic
-        if not items and data.get("total_cost", 0) > 0:
-            items = [{
-                "name": category_names_ro[cat_key],
-                "details": "Cost estimat global",
-                "total_cost": data["total_cost"]
-            }]
-            
-        if is_included:
-            # Adăugăm la total
-            total_price += data.get("total_cost", 0.0)
-            
-            # Adăugăm secțiune în breakdown
-            section = {
-                "category": category_names_ro[cat_key],
-                "total_category": data.get("total_cost", 0.0),
-                "items": items  # AICI E DETALIUL MAXIM (fiecare geam, fiecare strat de acoperiș)
-            }
-            final_json["detailed_breakdown"].append(section)
-        else:
-            # Adăugăm la excluse (doar sumar)
-            final_json["excluded_options"].append({
-                "category": category_names_ro[cat_key],
-                "estimated_cost": data.get("total_cost", 0.0),
-                "items_count": len(items)
-            })
-
-    final_json["summary"]["total_price_eur"] = round(total_price, 2)
-
-    # 3. Salvare
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(final_json, f, indent=2, ensure_ascii=False)
-        
-    return final_json

@@ -1,3 +1,4 @@
+# new/runner/pricing/jobs.py
 from __future__ import annotations
 import json
 import os
@@ -18,16 +19,7 @@ class PricingJobResult:
     success: bool
     message: str
     total_cost: float = 0.0
-    result_data: dict | None = None  # Datele brute complete
-
-def _load_frontend_data(job_root: Path) -> dict:
-    fpath = job_root / "frontend_data.json"
-    if fpath.exists():
-        try:
-            with open(fpath, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except: pass
-    return {}
+    result_data: dict | None = None
 
 def _run_for_single_plan(run_id: str, plan: PlanInfo, frontend_data: dict) -> PricingJobResult:
     work_dir = plan.stage_work_dir
@@ -52,10 +44,9 @@ def _run_for_single_plan(run_id: str, plan: PlanInfo, frontend_data: dict) -> Pr
         if roof_json.exists():
             with open(roof_json, "r", encoding="utf-8") as f: roof_data = json.load(f)
         
-        # Calcul
+        # AICI trimitem tot obiectul frontend_data in calculator
         result = calculate_pricing_for_plan(area_data, openings_data, frontend_data, roof_data)
         
-        # Salvare Raw
         out_file = work_dir / "pricing_raw.json"
         with open(out_file, "w", encoding="utf-8") as f:
             json.dump(result, f, indent=2, ensure_ascii=False)
@@ -76,15 +67,15 @@ def _run_for_single_plan(run_id: str, plan: PlanInfo, frontend_data: dict) -> Pr
         traceback.print_exc()
         return PricingJobResult(plan.plan_id, work_dir, False, str(e))
 
-def run_pricing_for_run(run_id: str, max_parallel: int | None = None) -> List[PricingJobResult]:
+def run_pricing_for_run(run_id: str, max_parallel: int | None = None, frontend_data_override: dict = None) -> List[PricingJobResult]:
     try:
         plans = load_plan_infos(run_id, stage_name=STAGE_NAME)
     except PlansListError as e:
         print(f"❌ [{STAGE_NAME}] {e}")
         return []
         
-    job_root = Path(f"new/runner/jobs/{run_id}")
-    frontend_data = _load_frontend_data(job_root)
+    # Folosim datele pasate din orchestrator, altfel {}
+    frontend_data = frontend_data_override if frontend_data_override is not None else {}
     
     print(f"\n💰 [{STAGE_NAME}] Calcul costuri (brut) pentru {len(plans)} planuri...")
     
