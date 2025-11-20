@@ -9,7 +9,7 @@ import argparse
 import time
 from datetime import datetime
 
-from .config.settings import build_job_root, RUNS_ROOT
+from .config.settings import build_job_root, RUNS_ROOT, RUNNER_ROOT
 from .segmenter import segment_document, classify_segmented_plans
 from .segmenter.classifier import ClassificationResult
 from .floor_classifier import run_floor_classification, FloorClassificationResult
@@ -165,14 +165,30 @@ def _create_run_for_detections(job_root: Path, house_plans: list[ClassifiedPlanI
 
 
 def _load_frontend_data(job_root: Path) -> dict:
-    """Încarcă datele din frontend (dacă există) pentru a fi folosite în pricing."""
+    """
+    Încarcă datele din frontend.
+    Prioritate: 
+    1. runner/frontend_data.json (încărcat de user)
+    2. job_root/frontend_data.json (dacă a fost copiat)
+    """
+    # 1. Căutăm în rădăcina runner (unde userul a făcut upload)
+    user_upload = RUNNER_ROOT / "frontend_data.json"
+    if user_upload.exists():
+        try:
+            with open(user_upload, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+
+    # 2. Fallback la job_root
     frontend_file = job_root / "frontend_data.json"
     if frontend_file.exists():
         try:
             with open(frontend_file, "r", encoding="utf-8") as f:
                 return json.load(f)
         except Exception:
-            return {}
+            pass
+            
     return {}
 
 
@@ -344,15 +360,22 @@ def run_segmentation_and_classification_for_document(
         # =========================================================
         # STEP 12: PRICING
         # =========================================================
+        
+        # MODIFICARE: Încărcăm datele AICI, înainte de pricing!
+        frontend_data = _load_frontend_data(job_root)
+        
         with Timer("STEP 12: Pricing - Calculate all costs (raw)") as t:
-            pricing_results: list[PricingJobResult] = run_pricing_for_run(run_id)
+            pricing_results: list[PricingJobResult] = run_pricing_for_run(
+                run_id, 
+                frontend_data_override=frontend_data
+            )
         pipeline_timer.add_step("12. Pricing", t.end_time - t.start_time)
         
         # =========================================================
         # STEP 13: OFFER GENERATION
         # =========================================================
         with Timer("STEP 13: Offer Generation - Build final offers") as t:
-            frontend_data = _load_frontend_data(job_root)
+            # Folosim datele deja încărcate mai sus
             offer_level = frontend_data.get("nivelOferta", "Structură + ferestre")
             
             total_project_cost = 0.0
